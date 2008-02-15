@@ -1,4 +1,4 @@
-Nginxr is a ruby wrapper for nginx configuration and administration.
+Nginxr is a ruby wrapper for nginx config file.
 
 Test: 
 $ ruby test/playing.rb
