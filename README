@@ -1,0 +1,6 @@
+Nginxr is a ruby wrapper for nginx configuration and administration.
+
+Test: 
+$ ruby test/playing.rb
+
+2008 (c) Oleg Andreev (oleganza)
