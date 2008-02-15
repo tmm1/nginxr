@@ -11,7 +11,8 @@ module Nginx
   class Builder
     def self.build(&block)
       ctx = new
-      ctx.instance_eval(&block)
+      r = ctx.instance_eval(&block)
+      ctx.directives << Directive.new('break') if r == :break
       ctx.directives
     end
     

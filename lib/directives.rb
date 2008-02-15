@@ -1,7 +1,7 @@
 module Nginx
   class Directive
     attr_accessor :name, :args, :children
-    def initialize(name, args = nil, children = nil)
+    def initialize(name, args = [], children = nil)
       @name = name
       @args = args
       @children = children

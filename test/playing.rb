@@ -108,7 +108,7 @@ conf = Nginx::Config.new('/etc/nginx/nginx.conf') do
       
       _if '$slow' do
         limit_rate '10k'
-    #    break
+        :break
       end
 
       rewrite %r{^/assets/([^/]+/[0123].+)$}, '/assets/partition_1/$1' 
