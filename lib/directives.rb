@@ -7,12 +7,9 @@ module Nginx
       @children = children
     end
     def render(l = 0)
-      d = TAB*l + @name + @args.map{|a| " " + render_option(a) }.join
-      if @children 
-        d + render_children(l)
-      else
-        d + ";"
-      end
+      TAB*l + @name + 
+        @args.map{|a| " " + render_option(a) }.join +
+        (@children ? render_children(l) : ";")
     end
     def render_option(a)
       case a
