@@ -63,7 +63,7 @@ conf = Nginx::Config.new('/etc/nginx/nginx.conf') do
         # so regular expressions will not be checked.
         configuration :C
       end
-      location %r{\.(gif|jpg|jpeg)$} do
+      location %r{\.(gif|jpg|jpeg)$}i do
         # matches any request ending in gif, jpg, or jpeg. However, all
         # requests to the /images/ directory will be handled by
         # Configuration C.   
