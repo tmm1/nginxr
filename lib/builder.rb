@@ -48,6 +48,10 @@ module Nginx
       nil
     end
     
+    def _include(path)
+      @directives << Directive.new('include', [path])
+    end
+    
     def _if(expr, &block)
       @directives << IfDirective.new(expr, self.class.build(&block))
     end 
