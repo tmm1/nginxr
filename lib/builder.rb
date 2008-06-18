@@ -2,7 +2,7 @@ module Nginx
   TAB = "  "
   class Config
     attr_accessor :body, :path
-    def initialize(path, &block)
+    def initialize(path = nil, &block)
       @path = path
       @body = Builder.build(&block).render
     end
@@ -55,6 +55,10 @@ module Nginx
     
     def _if(expr, &block)
       @directives << IfDirective.new(expr, self.class.build(&block))
-    end 
+    end
+
+    def _alias(path)
+      @directives << Directive.new('alias', [path])
+    end
   end
 end
